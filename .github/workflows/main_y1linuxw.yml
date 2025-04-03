@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure Functions: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python project to Azure Function App - Y1Linux
+name: Build and deploy Python project to Azure Function App - Y1LinuxW
 
 on:
   push:
@@ -69,15 +69,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_877A9F7FE73F40F2BD82F0ECAA11C0C0 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_58462A469C2A4C5E81E0D0EC6DA7ECFF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F63859D42ABF4DA8A1E881FCD114BBA3 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D3F950FE3E60471693D78F06231DED1F }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D67C711DD8D948288B5CC8DE99848FDE }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_70DCB01EF7CE478F95899B5E939F1CF8 }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'Y1Linux'
+          app-name: 'Y1LinuxW'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           
